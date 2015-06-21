@@ -1,0 +1,14 @@
+{
+  "name"         : "yaodao-scraper",
+  "version"      : "0.0.1",
+  "description"  : "Scrape yaodo.",
+  "main"         : "download.js",
+  "author"       : "Cheng-Yu Lee",
+  "dependencies" : {
+    "request"    : "latest",
+    "cheerio"    : "latest",
+    "promise"    : "latest",
+    "html-escape": "latest",
+    "node-getopt": "latest"
+  }
+}
