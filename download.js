@@ -118,7 +118,7 @@ function main() {
     try {
       process.chdir(opt.options['output']);
     } catch (e) {
-      console.log('Couldn not change directory', d);
+      console.log('Couldn not change directory', e);
       return;
     };
   }
