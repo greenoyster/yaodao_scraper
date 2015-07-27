@@ -3,9 +3,11 @@ var util = require('util');
 var getOpt = require('node-getopt');
 
 var opt = getOpt.create([
-    ['', 'input=DIR' , 'Iutput'],
-    ['', 'output=DIR' , 'Output'],
-    ['h', 'help'        , 'Display help']
+    ['', 'input=DIR', 'Iutput'],
+    ['', 'output=DIR', 'Output'],
+    ['', 'title=TITLE' , 'title'],
+    ['', 'author=AUTHOR', 'author'],
+    ['h', 'help', 'Display help']
 ]).bindHelp().parseSystem();
 
 if (!opt.options['input'] || !opt.options['output']) {
@@ -18,8 +20,10 @@ var outputFile = opt.options['output'];
 
 var fd = fs.openSync(outputFile, 'w');
 
-var title = '妖刀記';
-var author = '默默猴';
+// var title = '妖刀記';
+// var author = '默默猴';
+var title = opt.options['title'];
+var author = opt.options['author'];
 fs.writeSync(fd, util.format('%% %s\n%% %s\n\n', title, author));
 
 for (var i = 1; ;++i) {
